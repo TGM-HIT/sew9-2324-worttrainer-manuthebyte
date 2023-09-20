@@ -43,7 +43,7 @@ public class SpellingTrainer {
                     ""
             );
 
-            if (answer != null) {
+            if (answer != null && !answer.isEmpty()) {
                 if (answer.equals(this.currentPair.getWord())) {
                     JOptionPane.showMessageDialog(null, "Correct!");
                     this.stats.incrementCorrect();
@@ -51,8 +51,6 @@ public class SpellingTrainer {
                     JOptionPane.showMessageDialog(null, "Wrong! The correct answer is " + this.currentPair.getWord());
                     this.stats.incrementWrong();
                 }
-                this.persistMethod.persist(this.stats);
-                this.currentPair = this.pairs.get(rand.nextInt(this.pairs.size()));
             } else {
                 this.persistMethod.persist(this.stats);
                 this.currentPair = this.pairs.get(rand.nextInt(this.pairs.size()));

@@ -17,3 +17,4 @@ Der aktuelle Zustand des Worttrainers wird am Ende persistiert.
 ## Persistierung
 Die Anwendung ermöglicht die Speicherung einer Worttrainer-Session, einschließlich der verfügbaren Wort-Bild-Paare, des aktuellen ausgewählten Paares (falls vorhanden) und der Statistik.
 Die Persistierung wird mithilfe von JSON realisiert.
+Dadurch, dass ein Interface "IPersistable" definiert ist, kann die Persistierungsmethode leicht ausgetauscht werden.

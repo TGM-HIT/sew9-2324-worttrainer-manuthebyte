@@ -1,8 +1,17 @@
+/**
+ * The trainer statistics
+ *
+ * @author Manuel Glenk
+ * @version 2023-09-20
+ */
 public class TrainerStatistics {
-    private int total;
-    private int correct;
-    private int wrong;
+    private int total; // The total amount of questions
+    private int correct; // The amount of correct answers
+    private int wrong; // The amount of wrong answers
 
+    /**
+     * Creates a new TrainerStatistics
+     */
     public TrainerStatistics() {
         this.total = 0;
         this.correct = 0;
@@ -33,11 +42,17 @@ public class TrainerStatistics {
         this.wrong = wrong;
     }
 
+    /**
+     * Increments the total amount of questions and the amount of correct answers
+     */
     public void incrementCorrect() {
         total++;
         correct++;
     }
 
+    /**
+     * Increments the total amount of questions and the amount of wrong answers
+     */
     public void incrementWrong() {
         total++;
         wrong++;

@@ -5,7 +5,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The main class
+ *
+ * @author Manuel Glenk
+ * @version 2023-09-20
+ */
 public class Main {
+
+    /**
+     * The main method
+     * Creates the pairs list and starts the trainer
+     */
     public static void main(String[] args) throws MalformedURLException {
         List<ImageWordPair> pairs = new ArrayList<>();
         pairs.add(new ImageWordPair(new URL("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2000px-Google_2015_logo.svg.png"), "Google"));

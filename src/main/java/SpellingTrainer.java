@@ -4,18 +4,39 @@ import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * The spelling trainer
+ *
+ * @author Manuel Glenk
+ * @version 2023-09-20
+ */
 public class SpellingTrainer {
-    private List<ImageWordPair> pairs;
-    private ImageWordPair currentPair;
-    private TrainerStatistics stats;
-    private PersistMethod persistMethod;
+    private List<ImageWordPair> pairs; // The list of image-word pairs
+    private ImageWordPair currentPair; // The current image-word pair
+    private TrainerStatistics stats; // The statistics of the trainer
+    private PersistMethod persistMethod; // The persist method
 
+    /**
+     * Creates a new SpellingTrainer
+     *
+     * @param pairs The list of image-word pairs
+     * @param persistMethod The persist method
+     */
     public SpellingTrainer(List<ImageWordPair> pairs, PersistMethod persistMethod) {
         this.pairs = pairs;
         this.stats = new TrainerStatistics();
         this.persistMethod = persistMethod;
     }
 
+    /**
+     * Starts the trainer
+     *
+     * 1. Pick a random image-word pair
+     * 2. Show the image
+     * 3. Ask the user for the word
+     * 4. If the user entered a word, check if it is correct, show a message dialog with the result and increment the correct or wrong counter
+     * 5. If the user did not enter a word, persist the statistics and finish
+     */
     public void start() {
         Random rand = new Random();
 
@@ -59,6 +80,17 @@ public class SpellingTrainer {
         }
     }
 
+    /**
+     * Builds the stats string
+     *
+     * Made of:
+     * - Total
+     * - Correct
+     * - Wrong
+     * - Accuracy
+     *
+     * @return The stats string
+     */
     private String buildStatsString() {
         String statsString = "Total: " + this.stats.getTotal() + "\n" +
                 "Correct: " + this.stats.getCorrect() + "\n" +

@@ -7,6 +7,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
+/**
+ * Represents a persist method that uses JSON
+ *
+ * @author Manuel Glenk
+ * @version 2023-09-20
+ */
 public class JsonPersistMethod implements PersistMethod {
     private String filename;
 

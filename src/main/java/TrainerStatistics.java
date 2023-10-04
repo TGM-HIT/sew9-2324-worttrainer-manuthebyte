@@ -1,3 +1,5 @@
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * The trainer statistics
  *
@@ -18,14 +20,17 @@ public class TrainerStatistics {
         this.wrong = 0;
     }
 
+    @XmlElement
     public int getTotal() {
         return total;
     }
 
+    @XmlElement
     public int getCorrect() {
         return correct;
     }
 
+    @XmlElement
     public int getWrong() {
         return wrong;
     }

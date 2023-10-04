@@ -7,13 +7,27 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+/**
+ * Represents a persist method that uses XML
+ *
+ * @author Manuel Glenk
+ * @version 2023-10-04
+ */
 public class XmlPersistMethod implements PersistMethod {
-    private String filename;
+    private String filename; // The filename
 
+    /**
+     * Creates a new XML persist method
+     */
     public XmlPersistMethod(String filename) {
         this.filename = filename;
     }
 
+    /**
+     * Persists the TrainerStatistics with the JAXB library
+     *
+     * @param stats The TrainerStatistics to persist
+     */
     public void persist(TrainerStatistics stats) {
         try {
             JAXBContext context = JAXBContext.newInstance(TrainerStatistics.class);
@@ -25,6 +39,11 @@ public class XmlPersistMethod implements PersistMethod {
         }
     }
 
+    /**
+     * Loads the TrainerStatistics with the JAXB library
+     *
+     * @return The loaded TrainerStatistics
+     */
     public TrainerStatistics load() {
         File file = new File(this.filename);
 

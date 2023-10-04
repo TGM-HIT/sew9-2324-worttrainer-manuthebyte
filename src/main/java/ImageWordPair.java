@@ -17,6 +17,10 @@ public class ImageWordPair {
      * @param word The word
      */
     public ImageWordPair(URL imageUrl, String word) {
+        if (imageUrl == null || word == null) {
+            throw new IllegalArgumentException("The image URL and the word must not be null!");
+        }
+
         this.imageUrl = imageUrl;
         this.word = word;
     }
